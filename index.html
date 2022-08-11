@@ -5,73 +5,49 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
 </head>
 <body>
-    <script>
-        const choices = ['Rock', 'Paper', 'Scissors']
 
-        function getComputerChoice(){
-            compChoice = choices[Math.floor(Math.random() * choices.length)]
-            return compChoice
-        }
+    <div class="container">
+        <div class="header">
+            Rock Paper Scissors
+        </div>
+        <div class="instructions">First to 5 Wins!</div>
+        <div class="round-results"></div>
+        <button class="play-again">PLAY AGAIN!</button>
+        <div class="score-container">
+            <div class="player">
+                <div class="player-con">
+                    <i class="fa fa-user" aria-hidden="true"></i> -
+                    <div class="player-score"></div>
+                </div>
+                <div class="player-selection"></div>
+            </div>
+            <span style="font-size: 30px; color: rgb(43, 122, 226);">VS</span>
+            <div class="computer">
+                <div class="computer-con">
+                    <div class="computer-score"></div> -
+                    <i class="fa fa-desktop" aria-hidden="true"></i>
+                </div>
+                <div class="computer-selection"></div>
+            </div>
+        </div>
         
-        function playRound(playerSelection, computerSelection){
-            if(playerSelection.toUpperCase() === 'ROCK' && computerSelection === 'Paper'){
-                return 'You lost! Paper beats Rock'
-            } else if(playerSelection.toUpperCase() === 'PAPER' && computerSelection === 'Rock'){
-                return 'You Won! Paper beats Rock'
-            } else if(playerSelection.toUpperCase() === 'ROCK' && computerSelection === 'Rock'){
-                return 'Its a tie!'
-            }
+        <div class="match-winner"></div>
+        <div class="choice-container">
+            <h1>Choose Your Option!</h1>
+            <div class="btn-con">
+                <button data-choice="Rock" class="choice-btn">Rock<i class="fa fa-hand-rock-o"></i></button>
+                <button data-choice="Paper" class="choice-btn">Paper<i class="fa fa-hand-paper-o"></i></button>
+                <button data-choice="Scissors" class="choice-btn">Scissors<i class="fa fa-hand-scissors-o"></i></button>
+            </div>
+        </div>
+    </div>
 
-            if(playerSelection.toUpperCase() === 'ROCK' && computerSelection === 'Scissors'){
-                return 'You won! Rock beats Scissors'
-            } else if(playerSelection.toUpperCase() === 'SCISSORS' && computerSelection === 'Rock'){
-                return 'You lost! Rock beats Scissors'
-            } else if(playerSelection.toUpperCase() === 'SCISSORS' && computerSelection === 'Scissors'){
-                return 'Its a tie!'
-            }
 
-            if(playerSelection.toUpperCase() === 'SCISSORS' && computerSelection === 'Paper'){
-                return 'You won! Scissors beats Paper'
-            } else if(playerSelection.toUpperCase() === 'PAPER' && computerSelection === 'Scissors'){
-                return 'You lost! Scissors beats Paper'
-            } else if(playerSelection.toUpperCase() === 'PAPER' && computerSelection === 'Paper'){
-                return 'Its a tie!'
-            }
-        }
-
-        
-        function game(){
-            let playerScore = 0;
-            let computerScore = 0;
-            for(let i=0; i < 5; i++){
-                const playerChoice = prompt('Enter Rock, Paper or Scissors')
-                const computerChoice = getComputerChoice()
-                console.log(playRound(playerChoice, computerChoice))
-                if (playRound(playerChoice, computerChoice).includes('won')){
-                    playerScore++;
-                    console.log('Player won the round')
-                } else if (playRound(playerChoice, computerChoice).includes('lost')){
-                    computerScore++;
-                    console.log('Computer won the round')
-                } else {
-                    console.log('No one won the round')
-                }
-            }
-            console.log("Game Finished!")
-            if (playerScore > computerScore){
-                console.log('Player won the game!')
-                console.log("Player Score is:", playerScore, 'Computer Score is:', computerScore)
-            } else if (computerScore > playerScore){
-                console.log('Computer won the game!')
-                console.log("Player Score is:", playerScore, 'Computer Score is:', computerScore)
-            } else {
-                console.log('No one won the game, its a tie!')
-                console.log("Player Score is:", playerScore, 'Computer Score is:', computerScore)
-            }
-        }
-        game();
-    </script>
+    <script src="index.js"></script>
 </body>
 </html>
