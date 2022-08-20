@@ -47,19 +47,23 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     width: 100%;
-    height: 100%;
     gap: 50px;
+    margin-top: 20px;
 }
 .choice-btn, .play-again {
-    padding: 20px 40px;
+    padding: 10px 20px;
     font-size: 25px;
     border: 2px solid rgb(226, 43, 43);
     background-color: transparent;
     color: rgb(226, 43, 43);
-    flex: 1;
     transition: all 0.5s;
     font-family: pixel, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 }
 .play-again {
     margin-top: 30px;
@@ -75,7 +79,7 @@ body {
     font-size: 40px;
 }
 .instructions {
-    font-size: 40px;
+    font-size: 30px;
     color: rgb(226, 43, 43);
     text-align: center;
     font-weight: 600;
@@ -119,4 +123,85 @@ body {
 .round-results{
     font-size: 30px;
     font-weight: 700;
+}
+@media only screen and (max-width: 670px){
+    .header{
+        font-size: 40px;
+    }
+    .choice-container {
+        width: 450px;
+        height: 250px;
+    }
+    .choice-btn, .play-again{
+        font-size: 20px;
+    }
+    .instructions{
+        font-size: 25px;
+    }
+    .player-con, .computer-con{
+        font-size: 40px;
+    }
+    .player-selection, .computer-selection{
+        font-size: 40px;
+    }
+    .round-results{
+        font-size: 20px;
+    }
+    .score-container{
+        width: 500px;
+    }
+}
+@media only screen and (max-width: 570px){
+    .header{
+        font-size: 30px;
+    }
+    .choice-container {
+        width: 350px;
+        height: 250px;
+    }
+    .instructions{
+        font-size: 16px;
+    }
+    .score-container{
+        width: 400px;
+    }
+    .player-selection, .computer-selection{
+        font-size: 30px;
+    }
+    .choice-container h1 {
+        font-size: 20px;
+    }
+    .player-con, .computer-con{
+        font-size: 35px;
+    }
+}
+@media only screen and (max-width: 467px){
+    .choice-container {
+        width: 250px;
+        height: fit-content;
+        padding: 40px;
+    }
+    .score-container{
+        width: 300px;
+    }
+}
+@media only screen and (max-width: 385px){
+    .header{
+        font-size: 25px;
+    }
+    .instructions{
+        font-size: 13px;
+    }
+    .round-results{
+        font-size: 16px;
+    }
+    .player-selection, .computer-selection{
+        font-size: 25px;
+    }
+    .player-selection, .computer-selection{
+        font-size: 25px;
+    }
+    .player-con, .computer-con{
+        font-size: 35px;
+    }
 }
