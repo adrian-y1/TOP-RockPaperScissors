@@ -1,4 +1,4 @@
-# TOP-RockPaperScissors
+# Rock Paper Scissors
 
 Visit Website: [RockPaperScissors](https://adrian-y1.github.io/TOP-RockPaperScissors/)
 
